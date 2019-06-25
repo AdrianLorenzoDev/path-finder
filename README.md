@@ -1,18 +1,10 @@
 # Path finder
 
-## Programming exercise that finds a paths from a node to another using informed/uninformed search
+## Simple program that finds a path from a node to another using informed/uninformed search
 
-Para el ejercicio, se han creado dos clases nuevas: `BandBQueue` para ramificación y acotación y `BandBSubQueue` para ramificación y acotación con subestimación.
+Implementation of branch and bound without and with underestimation algorithms using two types of priority queue sorting criteria: distance for branch and bound, and distance plus an heuristic (euclidean distance to the objective).
 
-Ambas clases heredan de la clase `FIFOQueue`, ya que en su definición, son lo mismo: Colas en las que primer ítem de la lista es el primero que sale. La diferencia principal, es que cada vez que se insertan elementos a la lista, se modifica el orden de la lista en base a un criterio.
-
-Al hacer uso de la función `extend(self, items)` de la clase `BandBQueue`, después de insertarse los elementos, se reordena a partir del coste del camino desde el nodo inicial hasta dicho inicio.
-
-Por otra parte, al hacer uso de la función `extend(self, items)` de la clase `BandBSubQueue`, después de insertarse los elementos, se reordena a partir de la suma coste del camino desde el nodo inicial hasta dicho inicio junto con un valor heurístico obtenido con la función `h(node)` del objeto `GPSProblem`: la distancia entre el nodo origen y el destino.
-
-Finalmente, se ha creado dos funciones, `branch_and_bound_search(problem)` y `branch_and_bound_subestimation_search(problem)`, que devuelven una solución al problema pasado por parámetro usando un objeto de las respectivas clases que hemos creado.
-
-Salidas:
+Example outputs:
 
 - From A to B
 ```
